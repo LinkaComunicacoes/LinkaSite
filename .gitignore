@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.local
+.DS_Store
+
+# Vídeos grandes (>100MB — limite GitHub)
+*.mp4
+*.mov
+*.avi

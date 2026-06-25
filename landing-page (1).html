@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@seunome | Marketing &amp; Social Media</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0d0d0d; color: #f0f0f0; overflow-x: hidden; }
+
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #A855F7;
+    --pink: #EC4899;
+    --pink-light: #F472B6;
+    --gradient: linear-gradient(135deg, #7C3AED, #EC4899);
+    --gradient-soft: linear-gradient(135deg, #7C3AED22, #EC489922);
+    --card-bg: #1a1a1a;
+    --border: #2a2a2a;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #0d0d0dcc;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 1.2rem; font-weight: 700;
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-cta {
+    background: var(--gradient); color: #fff; border: none;
+    padding: 0.5rem 1.25rem; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, #7C3AED33 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute; bottom: -10%; right: -10%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, #EC489933 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--gradient-soft);
+    border: 1px solid #7C3AED55;
+    color: var(--purple-light);
+    font-size: 0.8rem; font-weight: 600;
+    padding: 0.35rem 1rem; border-radius: 100px;
+    margin-bottom: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800; line-height: 1.1;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .hero h1 span {
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 1.15rem; color: #aaa; max-width: 560px;
+    line-height: 1.7; margin-bottom: 2.5rem;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--gradient); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 100px;
+    font-weight: 700; font-size: 1rem; cursor: pointer;
+    border: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-ghost {
+    background: transparent; color: #f0f0f0;
+    padding: 0.85rem 2rem; border-radius: 100px;
+    font-weight: 600; font-size: 1rem; cursor: pointer;
+    border: 1px solid var(--border); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--purple-light); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    justify-content: center; flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-size: 2rem; font-weight: 800;
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 0.8rem; color: #666; margin-top: 2px; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--pink); margin-bottom: 0.75rem;
+  }
+  .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
+  .section-sub { color: #888; font-size: 1rem; line-height: 1.7; max-width: 540px; }
+  .section-header { margin-bottom: 3rem; }
+
+  /* SOCIAL */
+  .social-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;
+  }
+  .social-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.5rem;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+    text-decoration: none; color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .social-card:hover { border-color: var(--purple-light); transform: translateY(-3px); }
+  .social-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .social-name { font-size: 0.85rem; font-weight: 700; color: #f0f0f0; }
+  .social-handle { font-size: 0.75rem; color: #666; }
+  .social-followers {
+    font-size: 1.4rem; font-weight: 800;
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .social-flabel { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* VIDEOS */
+  .videos-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;
+  }
+  .video-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .video-card:hover { border-color: var(--pink); transform: translateY(-3px); }
+  .video-thumb {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .video-thumb-overlay {
+    position: absolute; inset: 0; background: #00000033;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play-btn {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #ffffffdd;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: #7C3AED;
+    transition: transform 0.2s; cursor: pointer;
+  }
+  .video-card:hover .play-btn { transform: scale(1.1); }
+  .video-info { padding: 1rem 1.25rem; }
+  .video-tag {
+    display: inline-block;
+    background: var(--gradient-soft); border: 1px solid #7C3AED44;
+    color: var(--purple-light); font-size: 0.7rem; font-weight: 600;
+    padding: 2px 8px; border-radius: 100px; margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .video-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #f0f0f0; }
+  .video-meta { font-size: 0.78rem; color: #666; display: flex; gap: 12px; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;
+  }
+  .testimonial-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .testimonial-card:hover { border-color: #EC489955; }
+  .stars { color: #F59E0B; font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+  .testimonial-text { font-size: 0.9rem; color: #bbb; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 10px; }
+  .author-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: #fff;
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 0.85rem; font-weight: 700; color: #f0f0f0; }
+  .author-role { font-size: 0.75rem; color: #666; }
+
+  /* CTA */
+  .cta-section { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .cta-box {
+    background: var(--gradient);
+    border-radius: 24px; padding: 4rem 3rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-box h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 1rem; }
+  .cta-box p { color: #ffffffcc; font-size: 1.05rem; margin-bottom: 2rem; }
+  .btn-white {
+    background: #fff; color: var(--purple);
+    padding: 0.9rem 2.25rem; border-radius: 100px;
+    font-weight: 800; font-size: 1rem; cursor: pointer;
+    border: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem; text-align: center;
+    color: #444; font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+  footer span {
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider { height: 1px; background: var(--border); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    nav { padding: 0.75rem 1rem; }
+    section { padding: 3rem 1rem; }
+    .cta-box { padding: 2.5rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVEGAÇÃO -->
+<nav>
+  <div class="nav-logo">@seunome</div>
+  <a class="nav-cta" href="#agendar">Agendar reunião</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-badge">
+    <i class="ti ti-sparkles" aria-hidden="true"></i>
+    Marketing &amp; Social Media
+  </div>
+  <h1>Sua marca merece<br>estar no <span>próximo nível</span></h1>
+  <p>Estratégia, conteúdo e gestão de redes sociais para marcas que querem crescer de verdade — com método, dados e criatividade.</p>
+  <div class="hero-buttons">
+    <a class="btn-primary" href="#agendar">
+      <i class="ti ti-calendar" aria-hidden="true"></i>
+      Agendar reunião gratuita
+    </a>
+    <a class="btn-ghost" href="#videos">
+      <i class="ti ti-player-play" aria-hidden="true"></i>
+      Ver vídeos
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">+120</div>
+      <div class="stat-label">clientes atendidos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">avaliação média</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3M+</div>
+      <div class="stat-label">impressões geradas</div>
+    </div>
+  </div>
+</section>
+
+<!-- REDES SOCIAIS -->
+<section id="redes">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Redes sociais</div>
+      <div class="section-title">Me encontre por aí</div>
+      <div class="section-sub">Conteúdo diário sobre marketing, estratégia e bastidores. Vem junto!</div>
+    </div>
+    <div class="social-grid">
+      <a class="social-card" href="https://instagram.com/seunome" target="_blank" rel="noopener">
+        <div class="social-icon" style="background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);">
+          <i class="ti ti-brand-instagram" style="color:#fff; font-size:1.4rem;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@seunome</div>
+        </div>
+        <div>
+          <div class="social-followers">48,2K</div>
+          <div class="social-flabel">seguidores</div>
+        </div>
+      </a>
+      <a class="social-card" href="https://tiktok.com/@seunome" target="_blank" rel="noopener">
+        <div class="social-icon" style="background: #000; border: 1px solid #333;">
+          <i class="ti ti-brand-tiktok" style="color:#fff; font-size:1.4rem;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="social-name">TikTok</div>
+          <div class="social-handle">@seunome</div>
+        </div>
+        <div>
+          <div class="social-followers">91,5K</div>
+          <div class="social-flabel">seguidores</div>
+        </div>
+      </a>
+      <a class="social-card" href="https://youtube.com/@seunome" target="_blank" rel="noopener">
+        <div class="social-icon" style="background: #FF0000;">
+          <i class="ti ti-brand-youtube" style="color:#fff; font-size:1.4rem;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="social-name">YouTube</div>
+          <div class="social-handle">@seunome</div>
+        </div>
+        <div>
+          <div class="social-followers">22,1K</div>
+          <div class="social-flabel">inscritos</div>
+        </div>
+      </a>
+      <a class="social-card" href="https://linkedin.com/in/seunome" target="_blank" rel="noopener">
+        <div class="social-icon" style="background: #0A66C2;">
+          <i class="ti ti-brand-linkedin" style="color:#fff; font-size:1.4rem;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="social-name">LinkedIn</div>
+          <div class="social-handle">Seu Nome</div>
+        </div>
+        <div>
+          <div class="social-followers">12,8K</div>
+          <div class="social-flabel">conexões</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VÍDEOS MODELO -->
+<section id="videos">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Conteúdo em vídeo</div>
+      <div class="section-title">Vídeos que ensinam<br>e convertem</div>
+      <div class="section-sub">Uma amostra do meu trabalho — estratégia real, resultado real.</div>
+    </div>
+    <div class="videos-grid">
+      <!-- Substitua o href pelo link real do vídeo -->
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><i class="ti ti-player-play-filled" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">Estratégia</div>
+          <div class="video-title">Como crescer 10K seguidores em 30 dias</div>
+          <div class="video-meta">
+            <span><i class="ti ti-eye" style="font-size:13px" aria-hidden="true"></i> 84K views</span>
+            <span><i class="ti ti-clock" style="font-size:13px" aria-hidden="true"></i> 12 min</span>
+          </div>
+        </div>
+      </a>
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #EC4899, #F97316);">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><i class="ti ti-player-play-filled" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">Conteúdo</div>
+          <div class="video-title">O roteiro de reels que gera vendas todos os dias</div>
+          <div class="video-meta">
+            <span><i class="ti ti-eye" style="font-size:13px" aria-hidden="true"></i> 51K views</span>
+            <span><i class="ti ti-clock" style="font-size:13px" aria-hidden="true"></i> 8 min</span>
+          </div>
+        </div>
+      </a>
+      <a class="video-card" href="https://youtube.com" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #A855F7, #06B6D4);">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><i class="ti ti-player-play-filled" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">Tráfego pago</div>
+          <div class="video-title">Meta Ads para iniciantes: do zero ao primeiro cliente</div>
+          <div class="video-meta">
+            <span><i class="ti ti-eye" style="font-size:13px" aria-hidden="true"></i> 37K views</span>
+            <span><i class="ti ti-clock" style="font-size:13px" aria-hidden="true"></i> 15 min</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Depoimentos</div>
+      <div class="section-title">O que meus clientes<br>estão dizendo</div>
+      <div class="section-sub">Resultados reais de quem confiou na estratégia.</div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-text">"Em 3 meses dobramos o engajamento do perfil e geramos mais de R$40k em vendas direto pelo Instagram. Metodologia incrível."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">CA</div>
+          <div>
+            <div class="author-name">Camila Andrade</div>
+            <div class="author-role">CEO, Marca de Moda</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-text">"Nunca achei que redes sociais pudessem trazer tanto retorno. Saímos de 500 para 18K seguidores em 4 meses com conteúdo estratégico."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #EC4899, #F97316);">RS</div>
+          <div>
+            <div class="author-name">Rafael Santos</div>
+            <div class="author-role">Fundador, Agência Digital</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-text">"Profissional excepcional. Além de resultados concretos, ensina cada passo do processo. Minha equipe cresceu junto com o projeto."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #A855F7, #06B6D4);">PL</div>
+          <div>
+            <div class="author-name">Priscila Lima</div>
+            <div class="author-role">Gestora de Marketing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="agendar">
+  <div class="section-inner">
+    <div class="cta-box">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+      <h2>Pronto para crescer de verdade?</h2>
+      <p>Reserve uma sessão estratégica gratuita de 30 minutos.<br>Sem enrolação — só estratégia e plano de ação.</p>
+      <!-- Substitua o href pelo seu link do Calendly ou outra ferramenta -->
+      <a class="btn-white" href="https://calendly.com/seunome" target="_blank" rel="noopener">
+        <i class="ti ti-calendar-event" aria-hidden="true"></i>
+        Agendar minha sessão gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 · Seu Nome · Todos os direitos reservados · <span>Feito com estratégia</span></p>
+</footer>
+
+</body>
+</html>
