@@ -7,20 +7,6 @@ const VISIBLE = 3
 const CARD_WIDTH = 280
 const GAP = 20
 
-// ─── Image placeholder ───────────────────────────────────────────────────────
-
-function ImagePlaceholder({ gradient, alt }: { gradient?: string; alt: string }) {
-  return (
-    <div
-      className="w-full h-full flex items-center justify-center text-white/40 text-sm select-none"
-      style={{ background: gradient }}
-      aria-label={alt}
-    >
-      {alt}
-    </div>
-  )
-}
-
 // ─── Lightbox ────────────────────────────────────────────────────────────────
 
 function Lightbox({ item, onClose }: { item: PortfolioItem; onClose: () => void }) {
