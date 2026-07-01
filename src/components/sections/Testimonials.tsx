@@ -16,9 +16,8 @@ export function Testimonials() {
         >
           <div className="text-xs font-bold tracking-widest uppercase text-[#EC4899] mb-3">Depoimentos</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold mb-4">
-            O que meus clientes estão dizendo
+            O que nossos clientes estão dizendo
           </h2>
-          <p className="text-[#888] text-base leading-relaxed max-w-lg">Resultados reais de quem confiou na estratégia.</p>
         </motion.div>
 
         <motion.div

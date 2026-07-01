@@ -16,9 +16,8 @@ export function Videos() {
         >
           <div className="text-xs font-bold tracking-widest uppercase text-[#EC4899] mb-3">Conteúdo em vídeo</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold mb-4">
-            Vídeos que ensinam e convertem
+            Exemplos de histórias sendo contadas
           </h2>
-          <p className="text-[#888] text-base leading-relaxed max-w-lg">Uma amostra do meu trabalho — estratégia real, resultado real.</p>
         </motion.div>
 
         <motion.div

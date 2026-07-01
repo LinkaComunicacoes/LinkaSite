@@ -15,7 +15,7 @@ export function SocialGrid() {
           viewport={viewportOnce}
         >
           <div className="text-xs font-bold tracking-widest uppercase text-[#EC4899] mb-3">Redes sociais</div>
-          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold mb-4">Me encontre por aí</h2>
+          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold mb-4">Onde nos encontrar</h2>
           <p className="text-[#888] text-base leading-relaxed max-w-lg">Conteúdo diário sobre marketing, estratégia e bastidores. Vem junto!</p>
         </motion.div>
 

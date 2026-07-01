@@ -37,12 +37,6 @@ export function CallToAction() {
               viewport={viewportOnce}
             >
               {/* Badge */}
-              <motion.div variants={fadeUp}
-                className="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-                <i className="ti ti-calendar-check" aria-hidden="true" />
-                Sessão gratuita de 30 min
-              </motion.div>
-
               <motion.h2
                 variants={fadeUp}
                 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-white leading-tight mb-5"
@@ -50,11 +44,8 @@ export function CallToAction() {
                 Pronto para crescer<br />de verdade?
               </motion.h2>
 
-              <motion.p variants={fadeUp} className="text-white/75 text-lg max-w-lg mx-auto mb-3 leading-relaxed">
-                Reserve agora sua sessão estratégica gratuita.
-              </motion.p>
-              <motion.p variants={fadeUp} className="text-white/50 text-sm mb-10">
-                Sem enrolação — só estratégia, diagnóstico e plano de ação.
+              <motion.p variants={fadeUp} className="text-white/75 text-lg max-w-lg mx-auto mb-10 leading-relaxed">
+                Reserve agora sua conversa.
               </motion.p>
 
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 justify-center items-center">
@@ -66,7 +57,7 @@ export function CallToAction() {
                   className="text-base font-extrabold"
                 >
                   <i className="ti ti-calendar-event" aria-hidden="true" />
-                  Agendar minha sessão gratuita
+                  Agendar minha conversa
                 </Button>
                 <a
                   href="https://www.instagram.com/linka_comunicacoes"

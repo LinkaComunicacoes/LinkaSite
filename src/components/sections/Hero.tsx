@@ -58,18 +58,10 @@ export function Hero() {
 
         <motion.h1
           variants={fadeUp}
-          className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold leading-tight mb-5"
+          className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold leading-tight mb-10"
         >
-          Sua marca merece<br />
-          estar no <span className="gradient-text">próximo nível</span>
+          Sua empresa merece ser <span className="gradient-text">conhecida</span>
         </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          className="text-lg text-[#aaa] max-w-xl mx-auto leading-relaxed mb-10"
-        >
-          Estratégia, conteúdo e gestão de redes sociais para marcas que querem crescer de verdade — com método, dados e criatividade.
-        </motion.p>
 
         <motion.div variants={fadeUp} className="flex gap-4 flex-wrap justify-center">
           <Button variant="primary" href="#agendar" className="text-base font-bold">
@@ -78,7 +70,7 @@ export function Hero() {
           </Button>
           <Button variant="ghost" href="#videos" className="text-base">
             <i className="ti ti-player-play" aria-hidden="true" />
-            Ver vídeos
+            Portfólio
           </Button>
         </motion.div>
 

@@ -23,7 +23,7 @@ export function Footer() {
               className="h-12 w-auto object-contain"
             />
             <p className="text-[#555] text-sm max-w-xs text-center sm:text-left leading-relaxed">
-              Estratégia, conteúdo e gestão de redes sociais para marcas que querem crescer de verdade.
+              Estratégia, conteúdo e gestão de redes sociais para marcas.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-[#555] hover:text-[#A855F7] transition-colors"
           >
-            Agendar reunião →
+            Agendar conversa →
           </a>
         </div>
       </div>
